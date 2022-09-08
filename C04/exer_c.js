@@ -18,22 +18,22 @@ const value = Number(prompt("Valor R$: "))
 // Processamento de dados
 let message
 let time
-let charger
+let change
 
 if (value < 1) {
   message = "Valor insuficiente"
 } else if (value >= 1.75 && value < 3) {
   time = 60
-  charger = value % 1.75
+  change = value % 1.75
 } else if (value >= 3) {
   time = 120
-  charger = value % 3
+  change = value % 3
 } else {
   time = 30
-  charger = value % 1
+  change = value % 1
 }
 
 // Saída de dados
 value < 1 ? console.log(message) : ""
 value >= 1 ? console.log(`Tempo: ${time} min`) : ""
-value >= 1 ? console.log(`Troco R$: ${charger.toFixed(2)}`) : ""
+value >= 1 ? console.log(`Troco R$: ${change.toFixed(2)}`) : ""
