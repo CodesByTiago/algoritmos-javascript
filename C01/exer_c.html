@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio C</title>
+</head>
+<body>
+    <script>
+        const precoProduto = Number(prompt("Preço do produto: "))
+        const desconto = Number(prompt("Desconto em porcetagem: "))
+        const quantidaDeParcelas = Number(prompt("Quantidade de parcelas"))
+        const precoAVista = precoProduto - (precoProduto * desconto / 100)
+        const valorParcela = precoProduto / quantidaDeParcelas
+        alert(` Preço R$ ${precoProduto.toFixed(2)} \n Á Vista R$: ${precoAVista.toFixed(2)} \n Ou ${quantidaDeParcelas}x de R$: ${valorParcela.toFixed(2)}`)
+    </script>
+</body>
+</html>

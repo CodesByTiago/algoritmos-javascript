@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio B - Lan House</title>
+  </head>
+  <body>
+    <h1>Lan House</h1>
+    <form>
+      <label for="inValue">Valor por 15min de uso R$: </label>
+      <input type="text" id="inValue" />
+
+      <label for="inTime">Tempo de uso do cliente</label>
+      <input type="text" id="inTime" />
+
+      <input type="submit" value="Calcular valor a pagar" />
+    </form>
+
+    <h3></h3>
+
+    <script>
+      const frm = document.querySelector("form")
+      const outPrice = document.querySelector("h3")
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault()
+
+        const valueByTime = Number(frm.inValue.value)
+        const time = Number(frm.inTime.value)
+
+        const value = Math.ceil(time / 15) * valueByTime
+
+        outPrice.textContent = `Valor a pagar R$: ${value.toFixed(2)}`
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio C - Supermercado</title>
+  </head>
+  <body>
+    <h1>Supermercado</h1>
+    <form>
+      <label for="inProduct">Produto: </label>
+      <input type="text" id="inProduct" />
+
+      <label for="inPrice">Preço: R$ </label>
+      <input type="text" id="inPrice" />
+
+      <input type="submit" value="Ver promoção" />
+    </form>
+
+    <h3></h3>
+    <h4></h4>
+
+    <script>
+      const frm = document.querySelector("form")
+      const outProductPrice = document.querySelector("h3")
+      const outPricePromotion = document.querySelector("h4")
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault()
+
+        const product = frm.inProduct.value
+        const price = Number(frm.inPrice.value)
+
+        const priceUnitPromotion = price * 0.5
+        const pricePromotion = price * 3 - priceUnitPromotion
+
+        outProductPrice.textContent = `
+          ${product} - Promoção: Leve 3 por R$: ${pricePromotion.toFixed(2)}
+        `
+        outPricePromotion.textContent = `
+          O 3º produto custa apenas R$: ${priceUnitPromotion.toFixed(2)}
+        `
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio A - Farmácia</title>
+  </head>
+  <body>
+    <h1>Farmácia</h1>
+    <form>
+      <label for="inName">Medicamento: </label>
+      <input type="text" id="inName" />
+
+      <label for="inPrice">Preço R$: </label>
+      <input type="text" id="inPrice" />
+
+      <input type="submit" value="Mostrar promoção" />
+    </form>
+
+    <h3></h3>
+    <h4></h4>
+
+    <script>
+      const frm = document.querySelector("form")
+      const outName = document.querySelector("h3")
+      const outPrice = document.querySelector("h4")
+
+      frm.addEventListener("submit", (e) => {
+        e.preventDefault()
+
+        const name = frm.inName.value
+        const price = Number(frm.inPrice.value)
+
+        outName.textContent = `Promoção de ${name}`
+        outPrice.textContent = `
+          Leve 2 por apenas ${Math.floor(price * 2).toFixed(2)}
+        `
+      })
+    </script>
+  </body>
+</html>
