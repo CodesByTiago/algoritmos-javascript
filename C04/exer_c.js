@@ -22,7 +22,7 @@ let charger
 
 if (value < 1) {
   message = "Valor insuficiente"
-} else if (value > 1.75 && value < 3) {
+} else if (value >= 1.75 && value < 3) {
   time = 60
   charger = value % 1.75
 } else if (value >= 3) {
